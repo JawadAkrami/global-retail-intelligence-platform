@@ -17,4 +17,4 @@ A production-style retail analytics platform that automates the extraction, vali
 
 ## Project Status
 
-🚧 Under Development
+Under Development
