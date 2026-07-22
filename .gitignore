@@ -1,4 +1,15 @@
 
+
+# Ignore datasets
+data/raw/
+data/processed/
+
+# Keep the folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+
+
 # Virtual Environment
 .venv/
 

@@ -1,0 +1,54 @@
+# Global Retail Intelligence Platform
+
+A production-style retail analytics platform that automates ETL workflows, data validation, analytics, and reporting using Python, PostgreSQL, and GitHub Actions.
+
+---
+
+## Project Structure
+
+```text
+global-retail-intelligence-platform/
+├── config/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── database/
+├── docs/
+├── reports/
+├── scripts/
+├── src/
+├── tests/
+└── .github/
+```
+
+---
+
+## Dataset
+
+This project uses the **Olist Brazilian E-Commerce Public Dataset**.
+
+The dataset is **not included** in this repository to keep the repository lightweight.
+
+### Download
+
+Download the dataset from Kaggle:
+
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+
+
+After downloading, extract the CSV files into:
+
+```text
+data/raw/
+```
+
+---
+
+## Tech Stack
+
+- Python
+- PostgreSQL
+- Pandas
+- Git
+- GitHub Actions
