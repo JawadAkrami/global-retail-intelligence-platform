@@ -1,4 +1,5 @@
 
+.env
 
 # Ignore datasets
 data/raw/
