@@ -1,7 +1,6 @@
 
-
-
 from src.extract.extract import DataExtractor
+from src.validate.validate import DataValidator
 from src.utils.logger import logger
 
 
@@ -10,13 +9,12 @@ def main():
     logger.info("Pipeline started.")
 
     extractor = DataExtractor()
-
     datasets = extractor.load_all()
 
-    print("\nDatasets Loaded:\n")
+    validator = DataValidator()
+    validator.validate_all(datasets)
 
-    for name, df in datasets.items():
-        print(f"{name:<15} {df.shape}")
+    print("Validation completed successfully.")
 
     logger.info("Pipeline finished.")
 
