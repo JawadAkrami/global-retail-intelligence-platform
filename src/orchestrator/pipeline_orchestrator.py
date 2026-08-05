@@ -1,5 +1,3 @@
-
-
 from src.clean.clean import DataCleaner
 from src.extract.extract import DataExtractor
 from src.load.load import DataLoader
@@ -18,25 +16,17 @@ class PipelineOrchestrator:
 
     def run(self):
 
-        try:
+        logger.info("Pipeline execution started.")
 
-            logger.info("Pipeline execution started.")
+        datasets = self.extractor.load_all()
 
-            datasets = self.extractor.load_all()
+        self.validator.validate_all(datasets)
 
-            self.validator.validate_all(datasets)
+        cleaned = self.cleaner.clean(datasets)
 
-            cleaned = self.cleaner.clean(datasets)
+        self.loader.load_bronze(cleaned)
 
-            self.loader.load_bronze(cleaned)
-
-            logger.info("Pipeline execution finished.")
-
-        except Exception as error:
-
-            logger.exception(error)
-
-            raise
+        logger.info("Pipeline execution finished.")
 
 
 if __name__ == "__main__":
@@ -48,5 +38,3 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("PIPELINE FINISHED SUCCESSFULLY")
     logger.info("=" * 60)
-
-    
